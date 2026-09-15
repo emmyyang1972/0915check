@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "index": "node src/indexer.mjs",
+    "reclassify": "node src/reclassify.mjs",
     "start": "node src/server.mjs"
   }
 }

@@ -12,6 +12,7 @@
     { "src": "/api/health", "dest": "/api/index.mjs?endpoint=health" },
     { "src": "/api/facets", "dest": "/api/index.mjs?endpoint=facets" },
     { "src": "/api/search", "dest": "/api/index.mjs?endpoint=search" },
+    { "src": "/api/file", "dest": "/api/index.mjs?endpoint=file" },
     { "src": "/(.*)", "dest": "/public/$1" }
   ]
 }
