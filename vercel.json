@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/api/health", "destination": "/api?endpoint=health" },
+    { "source": "/api/facets", "destination": "/api?endpoint=facets" },
+    { "source": "/api/search", "destination": "/api?endpoint=search" }
+  ]
+}
