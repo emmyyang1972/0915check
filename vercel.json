@@ -1,7 +1,17 @@
 {
-  "rewrites": [
-    { "source": "/api/health", "destination": "/api?endpoint=health" },
-    { "source": "/api/facets", "destination": "/api?endpoint=facets" },
-    { "source": "/api/search", "destination": "/api?endpoint=search" }
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.mjs",
+      "use": "@vercel/node",
+      "config": { "includeFiles": ["data/index.json"] }
+    },
+    { "src": "public/index.html", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/health", "dest": "/api/index.mjs?endpoint=health" },
+    { "src": "/api/facets", "dest": "/api/index.mjs?endpoint=facets" },
+    { "src": "/api/search", "dest": "/api/index.mjs?endpoint=search" },
+    { "src": "/(.*)", "dest": "/public/$1" }
   ]
 }
