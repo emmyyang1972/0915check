@@ -58,6 +58,17 @@ const server = http.createServer(async (req, res) => {
     return;
   }
   if (url.pathname === '/api/health') { json(res, 200, { ok: true, indexed: documents.length, generatedAt: index.generatedAt }); return; }
+  if (url.pathname === '/api/file') {
+    const doc = documents.find(item => item.documentId === url.searchParams.get('id'));
+    if (!doc) { json(res, 404, { error: 'Document not found' }); return; }
+    try {
+      const contentTypes = { pdf: 'application/pdf', doc: 'application/msword', docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', xls: 'application/vnd.ms-excel', xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', ppt: 'application/vnd.ms-powerpoint', pptx: 'application/vnd.openxmlformats-officedocument.presentationml.presentation', txt: 'text/plain; charset=utf-8', md: 'text/markdown; charset=utf-8' };
+      const body = await fs.readFile(doc.absolutePath);
+      res.writeHead(200, { 'content-type': contentTypes[doc.extension] ?? 'application/octet-stream', 'content-disposition': `inline; filename*=UTF-8''${encodeURIComponent(doc.fileName)}` });
+      res.end(body);
+    } catch { json(res, 404, { error: 'Source file is unavailable' }); }
+    return;
+  }
   if (url.pathname === '/api/facets') {
     const filtered = documents.filter(doc => matches(doc, url.searchParams));
     json(res, 200, { total: filtered.length, review: filtered.filter(doc => doc.classificationStatus === 'needs_review').length, jurisdiction: countBy('jurisdiction', filtered), documentType: countBy('documentType', filtered), primaryTopic: countBy('primaryTopic', filtered), region: countBy('region', filtered), year: countBy('year', filtered), extension: countBy('extension', filtered) });
