@@ -16,7 +16,7 @@ function csvCell(value) {
   return `"${String(value ?? '').replaceAll('"', '""')}"`;
 }
 
-const columns = ['documentId', 'fileName', 'relativePath', 'jurisdiction', 'region', 'year', 'years', 'documentType', 'primaryTopic', 'secondaryTopics', 'extension', 'size', 'modifiedAt', 'classificationStatus', 'confidence'];
+const columns = ['documentId', 'title', 'fileName', 'relativePath', 'folderCategory', 'subcategory', 'jurisdiction', 'year', 'years', 'documentType', 'primaryTopic', 'secondaryTopics', 'extension', 'contentExtraction', 'contentHash', 'size', 'modifiedAt', 'classificationStatus', 'confidence'];
 const csv = [columns.join(','), ...docs.map(doc => columns.map(key => csvCell(Array.isArray(doc[key]) ? doc[key].join('；') : doc[key])).join(','))].join('\r\n');
 const review = docs.filter(doc => doc.classificationStatus === 'needs_review');
 const reviewCsv = [columns.join(','), ...review.map(doc => columns.map(key => csvCell(Array.isArray(doc[key]) ? doc[key].join('；') : doc[key])).join(','))].join('\r\n');
