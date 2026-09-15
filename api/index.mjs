@@ -16,6 +16,7 @@ function json(res, status, body) {
 
 function matches(doc, params) {
   const filters = [
+    ['folderCategory', doc.folderCategory],
     ['jurisdiction', doc.jurisdiction],
     ['documentType', doc.documentType],
     ['topic', doc.primaryTopic],
@@ -39,8 +40,9 @@ function search(params) {
     let score = 0;
     if (q && doc.fileName.toLowerCase().includes(q)) score += 10;
     if (q && doc.relativePath.toLowerCase().includes(q)) score += 5;
-    if (q && doc.primaryTopic.toLowerCase().includes(q)) score += 4;
-    if (q && doc.documentType.toLowerCase().includes(q)) score += 3;
+    if (q && (doc.primaryTopic ?? '').toLowerCase().includes(q)) score += 4;
+    if (q && (doc.folderCategory ?? '').toLowerCase().includes(q)) score += 8;
+    if (q && (doc.documentType ?? '').toLowerCase().includes(q)) score += 3;
     if (q && (doc.contentSample ?? '').toLowerCase().includes(q)) score += 2;
     return { ...doc, score };
   }).filter(doc => !q || doc.score > 0).sort((a, b) => b.score - a.score || a.fileName.localeCompare(b.fileName, 'zh-Hant'));
@@ -52,7 +54,7 @@ export default function handler(req, res) {
   if (params.get('endpoint') === 'health') return json(res, 200, { ok: true, indexed: documents.length, generatedAt: index.generatedAt });
   if (params.get('endpoint') === 'facets') {
     const filtered = documents.filter(doc => matches(doc, params));
-    return json(res, 200, { total: filtered.length, review: filtered.filter(doc => doc.classificationStatus === 'needs_review').length, jurisdiction: countBy('jurisdiction', filtered), documentType: countBy('documentType', filtered), primaryTopic: countBy('primaryTopic', filtered), region: countBy('region', filtered), year: countBy('year', filtered), extension: countBy('extension', filtered) });
+    return json(res, 200, { total: filtered.length, review: filtered.filter(doc => doc.classificationStatus === 'needs_review').length, folderCategory: countBy('folderCategory', filtered), jurisdiction: countBy('jurisdiction', filtered), documentType: countBy('documentType', filtered), primaryTopic: countBy('primaryTopic', filtered), region: countBy('region', filtered), year: countBy('year', filtered), extension: countBy('extension', filtered) });
   }
   if (params.get('endpoint') === 'search') {
     const results = search(params).slice(0, 500);
