@@ -73,9 +73,7 @@
 - 已驗證首頁、分類 API、搜尋 API 及前端 JavaScript 語法。
 - 本地服務目前以 `http://localhost:3000` 運行；若服務已停止，下次可用 `npm.cmd start` 重新啟動。
 
-## 開工規則
-
-## 2026-09-15 開工結果
+## 2026-09-15 開工與收工結果
 
 - 檢查 `data/classification/review-queue.csv`，確認目前只有 2 筆低信心 PDF。
 - 發現 `classification-summary.json` 是舊報告，已執行 `node src/report.mjs` 重新產生；摘要現為 total 2705、autoCandidates 2703、needsReview 2。
@@ -91,5 +89,15 @@
 
 1. 取得兩筆 PDF 或新的來源根路徑後，重新執行索引並啟用 PDF 文字層／OCR流程。
 2. 原始檔可取得前，先設計人工分類審核介面與審核資料格式。
+
+### 今日部署
+
+- 已初始化 Git 並推送至 `https://github.com/emmyyang1972/0915check.git`。
+- 已連結 Vercel 專案 `0915check` 並完成 production 部署。
+- 線上網址：`https://0915check.vercel.app`。
+- 線上驗證：首頁 200、`/api/health` 2,705 筆、`/api/facets` 2,705 筆、`/api/search?q=感染` 190 筆。
+- Vercel API 路由修正提交為 `6dc1778`；最新 repo 提交為 `58a51fc`。
+
+## 開工規則
 
 當使用者輸入「開工」時，先讀取本檔案與 `worklog.md`，了解上一次的工作狀況、未完成事項及下一步，再開始執行新工作。

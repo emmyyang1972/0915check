@@ -113,3 +113,17 @@ npm.cmd start
 
 1. 取得 PDF 或新的來源路徑後重建索引。
 2. 若原文仍不可得，先建立審核介面及分類編輯資料格式。
+
+### 今日部署
+
+- 初始化 Git repository 並推送至 `https://github.com/emmyyang1972/0915check.git`。
+- 補上 `api/index.mjs` 與 `vercel.json`，讓 Vercel 能提供查詢 API。
+- 修正 Vercel API 404 路由問題，完成 production 部署至 Vercel 專案 `0915check`。
+- 線上網址：`https://0915check.vercel.app`。
+- 線上 smoke test 通過：首頁 200、健康檢查 2,705 筆、facets 2,705 筆、感染搜尋 190 筆。
+- 今日 Git 提交：`b3c3886`、`1105fbb`、`6dc1778`、`58a51fc`。
+
+### 收工狀態
+
+- 工作區乾淨，`main` 已追蹤 `origin/main`。
+- 下次開工先處理缺少原始檔的 2 筆待確認 PDF，或開始建立人工分類審核介面。
