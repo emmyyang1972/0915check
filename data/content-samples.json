@@ -1,0 +1,82 @@
+﻿[
+    {
+        "documentId":  "c43826f3d908773c",
+        "fileName":  "1.患者安全专项行动监测指标.pdf",
+        "relativePath":  "1.患者安全专项行动监测指标.pdf",
+        "extracted":  false,
+        "textSample":  "",
+        "error":  "Exception setting \"Open\": Cannot convert the \"False\" value of type \"bool\" to type \"Object\"."
+    },
+    {
+        "documentId":  "5ee08680f20afb31",
+        "fileName":  "1733125810893_50492.pdf",
+        "relativePath":  "1733125810893_50492.pdf",
+        "extracted":  false,
+        "textSample":  "",
+        "error":  "Exception setting \"Open\": Cannot convert the \"False\" value of type \"bool\" to type \"Object\"."
+    },
+    {
+        "documentId":  "a6476a3ab0aaf29c",
+        "fileName":  "1743499725091.pdf",
+        "relativePath":  "1743499725091.pdf",
+        "extracted":  false,
+        "textSample":  "",
+        "error":  "Exception setting \"Open\": Cannot convert the \"False\" value of type \"bool\" to type \"Object\"."
+    },
+    {
+        "documentId":  "4acac233c386cc83",
+        "fileName":  "3.患者安全专项行动年度工作汇总表 (1).pdf",
+        "relativePath":  "3.患者安全专项行动年度工作汇总表 (1).pdf",
+        "extracted":  false,
+        "textSample":  "",
+        "error":  "Exception setting \"Open\": Cannot convert the \"False\" value of type \"bool\" to type \"Object\"."
+    },
+    {
+        "documentId":  "41c99c108114e237",
+        "fileName":  "3.患者安全专项行动年度工作汇总表.pdf",
+        "relativePath":  "3.患者安全专项行动年度工作汇总表.pdf",
+        "extracted":  false,
+        "textSample":  "",
+        "error":  "Exception setting \"Open\": Cannot convert the \"False\" value of type \"bool\" to type \"Object\"."
+    },
+    {
+        "documentId":  "489d139c1f8ad904",
+        "fileName":  "C172S-010001-02飞行检查单.pdf",
+        "relativePath":  "C172S-010001-02飞行检查单.pdf",
+        "extracted":  false,
+        "textSample":  "",
+        "error":  "Exception setting \"Open\": Cannot convert the \"False\" value of type \"bool\" to type \"Object\"."
+    },
+    {
+        "documentId":  "ab2d241d40a3196a",
+        "fileName":  "DB31_T 1660-2025 数据中心基础设施建设指南.pdf",
+        "relativePath":  "DB31_T 1660-2025 数据中心基础设施建设指南.pdf",
+        "extracted":  false,
+        "textSample":  "",
+        "error":  "Exception setting \"Open\": Cannot convert the \"False\" value of type \"bool\" to type \"Object\"."
+    },
+    {
+        "documentId":  "7dd2d578ca92ed10",
+        "fileName":  "DB3205_T 1167-2024 医疗机构数据分类分级规范.pdf",
+        "relativePath":  "DB3205_T 1167-2024 医疗机构数据分类分级规范.pdf",
+        "extracted":  false,
+        "textSample":  "",
+        "error":  "Exception setting \"Open\": Cannot convert the \"False\" value of type \"bool\" to type \"Object\"."
+    },
+    {
+        "documentId":  "734f1842abc12c00",
+        "fileName":  "DB3212_T 1157-2024 病案库房建设规范.pdf",
+        "relativePath":  "DB3212_T 1157-2024 病案库房建设规范.pdf",
+        "extracted":  false,
+        "textSample":  "",
+        "error":  "Exception setting \"Open\": Cannot convert the \"False\" value of type \"bool\" to type \"Object\"."
+    },
+    {
+        "documentId":  "d210de54e6249839",
+        "fileName":  "DB4403T 2022深圳医疗卫生机构职业安全与健康管理规范.pdf",
+        "relativePath":  "DB4403T 2022深圳医疗卫生机构职业安全与健康管理规范.pdf",
+        "extracted":  false,
+        "textSample":  "",
+        "error":  "Exception setting \"Open\": Cannot convert the \"False\" value of type \"bool\" to type \"Object\"."
+    }
+]
